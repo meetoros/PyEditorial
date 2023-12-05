@@ -27,6 +27,10 @@ sudo docker compose build
 
 sudo docker compose up -d
 
+echo migration starting in 15 seconds...
+
+sleep 15
+
 sudo docker compose run --rm pyeditorial /bin/bash -c "./manage.py makemigrations content"
 
 sudo docker compose run --rm pyeditorial /bin/bash -c "./manage.py migrate"
