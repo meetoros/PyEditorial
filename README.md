@@ -1,8 +1,8 @@
 # PyEditorial
-A free, open-source Blog CMS based on the "Django" and "Editorial" HTML5 theme. Ubuntu 22.04, Docker, Nginx, Gunicorn, Postgresql.
+A free, open-source Blog CMS based on the "Django" and "Editorial" HTML5 theme. Ubuntu 22.04, Docker, Nginx, Gunicorn, PostgreSQL.
 ------------
 ### Aim and explanation of the structure
-Aim of the project is to supply an installation bash script on a cleanOS (Ubuntu 22.04 LTS) with dockerized development environment. 
+Aim of the project is to supply an installation bash script to deploy "PyEditorial Python/Django app" on a cleanOS (Ubuntu 22.04 LTS) with dockerized development environment. 
 
 PyEditorial application is served with nginx 1.18.0 and gunicorn 20.1.0 by using HTTPS protocol. SSL certificate provided as self-signed. However, project is designed to create certificate while runing the installation script so, it can be unique for every user of this repository. 
 
@@ -39,3 +39,4 @@ Before using admin panel a super user needs to be created to login. Afrer instal
 sudo docker exec -it pyeditorial-pyeditorial-1 ./manage.py createsuperuser
 ```
 After creating super user go to `https://127.0.0.1:8000/admin` and login with user that you have created.
+
