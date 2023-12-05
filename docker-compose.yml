@@ -17,10 +17,9 @@ services:
  nginx:
     image: nginx:1.18.0
     ports:
-       - 8000:443
-    #command: bash -c "openssl req -x509 -nodes -subj '/C=TR' -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt"
+       - 8000:443 # Host port is 8000
     volumes:
-       - ./config/nginx/conf.d:/etc/nginx/conf.d
+       - ./config/nginx/conf.d:/etc/nginx/conf.d # Pass the configuration to inside of the container
        - static_volume:/app/static
        - media_volume:/app/media
     depends_on:
@@ -33,7 +32,7 @@ services:
     ports:
        - 5432:5432
     env_file:
-       - config/db/database_env
+       - config/db/database_env # Define environment variables with file
     networks:
        - database_network
     volumes:
