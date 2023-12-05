@@ -39,3 +39,6 @@ sudo docker compose run --rm pyeditorial /bin/bash -c "./manage.py collectstatic
 
 sudo docker ps
 
+echo generating ssl keys...
+
+sudo docker exec -d pyeditorial-nginx-1 openssl req -x509 -nodes -subj '/C=TR' -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
